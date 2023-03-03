@@ -8,5 +8,8 @@
 ;; Turn on tab line.
 (global-tab-line-mode)
 
+;; Turn off bell
+(setq ring-bell-function 'ignore)
+
 ;; Enable require
 (provide 'emacs-custom-config)
