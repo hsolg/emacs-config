@@ -13,3 +13,6 @@
 
 ;; Enable require
 (provide 'emacs-custom-config)
+
+;; Disable startup screen
+(setq inhibit-startup-message t)
