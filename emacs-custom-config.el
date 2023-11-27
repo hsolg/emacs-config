@@ -108,3 +108,7 @@
                 ;;(org-level-8 . 1.1)
 		))
     (set-face-attribute (car face) nil :font "JetBrains Mono" :weight 'regular :height (cdr face)))))
+
+(use-package cider
+  :ensure t
+  :pin melpa)
