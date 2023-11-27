@@ -109,6 +109,25 @@
 		))
     (set-face-attribute (car face) nil :font "JetBrains Mono" :weight 'regular :height (cdr face)))))
 
+(use-package diminish :ensure t)
+
 (use-package cider
   :ensure t
   :pin melpa)
+
+(use-package paredit
+  :ensure t
+  :config
+  (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
+  ;; enable in the *scratch* buffer
+  (add-hook 'lisp-interaction-mode-hook #'paredit-mode)
+  (add-hook 'cider-repl-mode-hook #'paredit-mode)
+  (add-hook 'clojure-mode #'paredit-mode)
+  (add-hook 'clojurescript-mode #'paredit-mode)
+  (add-hook 'ielm-mode-hook #'paredit-mode)
+  (add-hook 'lisp-mode-hook #'paredit-mode)
+  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
+  (diminish 'paredit-mode "()"))
+
+;; This can fix a problem with paredit 25+
+;;(define-key paredit-mode-map (kbd "RET") nil)
