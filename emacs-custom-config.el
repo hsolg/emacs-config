@@ -134,3 +134,11 @@
 
 ;; This can fix a problem with paredit 25+
 ;;(define-key paredit-mode-map (kbd "RET") nil)
+
+(setq load-path (append (list (expand-file-name "/opt/homebrew/share/emacs/site-lisp/lilypond")) load-path))
+
+(autoload 'LilyPond-mode "lilypond-mode")
+(setq auto-mode-alist
+      (cons '("\\.ly$" . LilyPond-mode) auto-mode-alist))
+
+(add-hook 'LilyPond-mode-hook (lambda () (turn-on-font-lock)))
