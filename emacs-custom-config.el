@@ -113,7 +113,9 @@
 
 (use-package cider
   :ensure t
-  :pin melpa)
+  :pin melpa
+  :config
+  (setq cider-repl-display-help-banner nil))
 
 (use-package paredit
   :ensure t
