@@ -12,6 +12,14 @@
 ;; Turn off bell
 (setq ring-bell-function 'ignore)
 
+(setq-default fill-column 100)
+
+(setq
+   split-width-threshold 0
+   split-height-threshold nil)
+
+(setq column-number-mode t)
+
 (load-theme 'wheatgrass t)
 ;; modus-vivendi
 ;; Deeper-blue
@@ -142,3 +150,12 @@
       (cons '("\\.ly$" . LilyPond-mode) auto-mode-alist))
 
 (add-hook 'LilyPond-mode-hook (lambda () (turn-on-font-lock)))
+
+(use-package helm
+  :ensure t)
+
+(use-package helm-ag
+  :ensure t)
+
+(load (expand-file-name "~/.quicklisp/slime-helper.el"))
+(setq inferior-lisp-program "sbcl")
