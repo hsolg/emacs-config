@@ -69,6 +69,8 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+;; Run package-refresh-contents manually after adding a new package to the config and before starting Emacs.
+
 ;; Markdown mode
 (use-package markdown-mode
   :ensure t
