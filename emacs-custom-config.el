@@ -143,6 +143,9 @@
 ;; This can fix a problem with paredit 25+
 ;;(define-key paredit-mode-map (kbd "RET") nil)
 
+(use-package geiser-guile
+  :ensure t)
+
 (setq load-path (append (list (expand-file-name "/opt/homebrew/share/emacs/site-lisp/lilypond")) load-path))
 
 (autoload 'LilyPond-mode "lilypond-mode")
